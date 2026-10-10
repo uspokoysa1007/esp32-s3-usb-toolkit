@@ -1,27 +1,74 @@
-# ESP32-S3 BSOD Proof-of-Concept
+# ⚡ ESP32-S3 BSOD Proof-of-Concept
 
-A research project demonstrating system stability issues via custom USB HID interaction on ESP32-S3.
+> **Security Research & USB HID Protocol Input Validation Proof-of-Concept for ESP32-S3**
 
-## Description
-This project implements a custom firmware for the ESP32-S3 microcontroller. It exploits specific behaviors in the USB HID (Human Interface Device) protocol handling to trigger a Blue Screen of Death (BSOD) on Windows systems.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Platform: ESP32-S3](https://img.shields.io/badge/Platform-ESP32--S3-red.svg)](https://www.espressif.com/)
+[![Framework: PlatformIO](https://img.shields.io/badge/Framework-Arduino%20%2F%20PlatformIO-orange.svg)](https://platformio.org/)
+[![Purpose: Research](https://img.shields.io/badge/Purpose-Educational%20%2F%20Research-critical.svg)](#-educational-purpose--disclaimer)
 
-## Educational Purpose
-This repository is created for educational and security research purposes only. The goal is to analyze how operating systems handle malformed USB descriptors and to understand the importance of robust driver input validation.
+---
 
-## Disclaimer
-Use this code only on hardware that you own. The author is not responsible for any damage, data loss, or system instability resulting from the use of this software. By using this code, you agree to take full responsibility for your actions.
+## 📌 Description / Описание
 
-## Getting Started
+This project implements experimental custom firmware for the **ESP32-S3** microcontroller with native USB OTG. It investigates edge-case behaviors in host USB HID (Human Interface Device) descriptor parsing and packet handling to evaluate OS driver stability and error resilience against malformed descriptors.
+
+> [!WARNING]
+> ### ⚠️ Educational Purpose & Disclaimer
+> This repository is published strictly for **educational, academic, and authorized security research purposes**. The goal is to analyze driver input validation routines in operating systems.
+> - Only deploy on test hardware and virtualized lab environments you own or are explicitly authorized to test.
+> - The author accepts no liability for system crashes, data loss, or damages resulting from the misuse of this code.
+
+---
+
+## 📁 Project Structure
+
+```text
+├── include/            # Header includes
+├── lib/                # Custom library dependencies
+├── src/
+│   └── main.cpp        # Firmware source code (USB HID routines)
+├── test/               # Unit / hardware test cases
+├── .gitignore          # Build & environment ignore rules
+├── LICENSE             # MIT License
+├── platformio.ini      # PlatformIO environment specification
+└── README.md           # Documentation
+```
+
+---
+
+## 🛠️ Getting Started
 
 ### Prerequisites
-* ESP32-S3 development board.
-* [PlatformIO](https://platformio.org/) installed in VS Code.
+* **Hardware:** ESP32-S3 development board with native USB port (e.g., ESP32-S3-DevKitC-1).
+* **Toolchain:** [VS Code](https://code.visualstudio.com/) with the [PlatformIO IDE](https://platformio.org/) extension installed, or CLI `platformio`.
 
 ### Compilation & Flashing
-1. Clone this repository.
-2. Open the folder in VS Code with the PlatformIO extension.
-3. Build the project using the PlatformIO "Build" task.
-4. Connect your ESP32-S3 and flash the firmware using the "Upload" task.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/uspokoysa/badusb-esp32-s3-bsod.git
+   cd badusb-esp32-s3-bsod
+   ```
+
+2. **Build via PlatformIO CLI:**
+   ```bash
+   pio run
+   ```
+
+3. **Upload to target board:**
+   ```bash
+   pio run --target upload
+   ```
+
+---
+
+## 📦 Releases
+
+Pre-packaged release archives and source distributions are available on the [Releases](https://github.com/uspokoysa/badusb-esp32-s3-bsod/releases) page.
+
+---
+
+## 📄 License
+
+Distributed under the [MIT License](LICENSE).
