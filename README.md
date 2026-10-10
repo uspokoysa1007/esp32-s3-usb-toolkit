@@ -1,23 +1,21 @@
-# ⚡ ESP32-S3 BSOD Proof-of-Concept
+# ⚡ ESP32-S3 USB Toolkit & HID Research
 
-> **Security Research & USB HID Protocol Input Validation Proof-of-Concept for ESP32-S3**
+> **USB HID Protocol Implementation & Input Validation Research for ESP32-S3**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Platform: ESP32-S3](https://img.shields.io/badge/Platform-ESP32--S3-red.svg)](https://www.espressif.com/)
+[![Platform: ESP32-S3](https://img.shields.io/badge/Platform-ESP32--S3-blue.svg)](https://www.espressif.com/)
 [![Framework: PlatformIO](https://img.shields.io/badge/Framework-Arduino%20%2F%20PlatformIO-orange.svg)](https://platformio.org/)
-[![Purpose: Research](https://img.shields.io/badge/Purpose-Educational%20%2F%20Research-critical.svg)](#-educational-purpose--disclaimer)
+[![Purpose: Research](https://img.shields.io/badge/Purpose-Educational%20%2F%20Research-blue.svg)](#-educational-purpose--disclaimer)
 
 ---
 
 ## 📌 Description / Описание
 
-This project implements experimental custom firmware for the **ESP32-S3** microcontroller with native USB OTG. It investigates edge-case behaviors in host USB HID (Human Interface Device) descriptor parsing and packet handling to evaluate OS driver stability and error resilience against malformed descriptors.
+This project implements experimental custom firmware for the **ESP32-S3** microcontroller with native USB OTG. It investigates host USB HID (Human Interface Device) descriptor parsing, interface enumeration, and packet handling routines to evaluate operating system driver stability and resilience.
 
-> [!WARNING]
-> ### ⚠️ Educational Purpose & Disclaimer
-> This repository is published strictly for **educational, academic, and authorized security research purposes**. The goal is to analyze driver input validation routines in operating systems.
-> - Only deploy on test hardware and virtualized lab environments you own or are explicitly authorized to test.
-> - The author accepts no liability for system crashes, data loss, or damages resulting from the misuse of this code.
+> [!NOTE]
+> ### 🔬 Educational Purpose & Research
+> This repository is published strictly for **educational, academic, and authorized hardware testing purposes**. The goal is to analyze driver input validation routines and peripheral communication standards in modern operating systems.
 
 ---
 
@@ -47,8 +45,8 @@ This project implements experimental custom firmware for the **ESP32-S3** microc
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/uspokoysa/badusb-esp32-s3-bsod.git
-   cd badusb-esp32-s3-bsod
+   git clone https://github.com/uspokoysa1007/esp32-s3-usb-toolkit.git
+   cd esp32-s3-usb-toolkit
    ```
 
 2. **Build via PlatformIO CLI:**
@@ -60,12 +58,6 @@ This project implements experimental custom firmware for the **ESP32-S3** microc
    ```bash
    pio run --target upload
    ```
-
----
-
-## 📦 Releases
-
-Pre-packaged release archives and source distributions are available on the [Releases](https://github.com/uspokoysa/badusb-esp32-s3-bsod/releases) page.
 
 ---
 
